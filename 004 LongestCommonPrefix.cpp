@@ -32,27 +32,16 @@ public:
         else{
             for (int i=0; i<len; i++){     
                 vector<char> word;
-                w=strs[i];
-                //cout<<w<<endl;
+                w=strs[i];               //cout<<w<<endl;
                 int len1=w.length();
                 if (len1<len1_min){
                     len1_min=len1;
                 }   
-                for(int j=0; j<len1;j++){
-                    //cout<<w[j]<<endl;
+                for(int j=0; j<len1;j++){              //cout<<w[j]<<endl;
                     word.push_back(w[j]);     
                 }
-                //for (int k=0; k<len1; k++){
-                  //  cout<<word[k]<<endl;
-                //}
                 words.push_back(word);
             }
-            //for(int i=0;i<len;i++){
-              //  for(int j=0;j<len1_min;j++){
-                //    cout<<words[i][j]<<endl;
-                //}
-            //}
-            //cout<<words.size();
             if(len==1){
                 string str(words[0].begin(),words[0].end());
                 return str;
@@ -61,15 +50,12 @@ public:
             //find the common string 
             else{
                 for(int j=0; j<len1_min; j++){
-                    for(int i=1; i<len; i++){                   
-                        //cout<<i<<" "<<words[i][j]<<endl;    
+                    for(int i=1; i<len; i++){                    //cout<<i<<" "<<words[i][j]<<endl;    
                             if(words[i][j]!=words[i-1][j]){
-                                string str(common.begin(),common.end());
-                                //cout<<j<<" "<<common[j-1]<<endl;
+                                string str(common.begin(),common.end());               //cout<<j<<" "<<common[j-1]<<endl;
                                 return str;
                             }
-                            else if(words[i][j]==words[i-1][j]&& i==len-1){
-                                //cout<<words[i][j]<<endl;
+                            else if(words[i][j]==words[i-1][j]&& i==len-1){                        //cout<<words[i][j]<<endl;
                                 if (j==0){
                                     common[0]=words[i][j];
                                 }
